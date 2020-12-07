@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.trubrowsermenusample.IteoraBottomAppMenuItems xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bottom_app_menu_items"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="24dp">
+
+        <com.example.trubrowsermenusample.IteoraBottomAppMenuItem
+            android:id="@+id/add_to_bookmarks"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_add_to_bookmarks"
+            android:text="@string/bottom_app_menu_add_to_bookmarks" />
+
+        <com.example.trubrowsermenusample.IteoraBottomAppMenuItem
+            android:id="@+id/search_on_page"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_search_on_page"
+            android:text="@string/bottom_app_menu_search_on_page" />
+
+        <com.example.trubrowsermenusample.IteoraBottomAppMenuItem
+            android:id="@+id/private_tab"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_private_tab"
+            android:text="@string/bottom_app_menu_private_tab" />
+
+        <com.example.trubrowsermenusample.IteoraBottomAppMenuItem
+            android:id="@+id/dark_mode"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_darkmode"
+            android:text="@string/bottom_app_menu_dark_mode" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="24dp">
+
+        <com.example.trubrowsermenusample.IteoraBottomAppMenuItem
+            android:id="@+id/protect_tab"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_protect_tab"
+            android:text="@string/bottom_app_menu_protect_tab" />
+
+        <com.example.trubrowsermenusample.IteoraBottomAppMenuItem
+            android:id="@+id/bookmarks"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_bookmarks"
+            android:text="@string/bottom_app_menu_bookmarks" />
+
+        <com.example.trubrowsermenusample.IteoraBottomAppMenuItem
+            android:id="@+id/downloads"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_downloads"
+            android:text="@string/bottom_app_menu_downloads" />
+
+        <com.example.trubrowsermenusample.IteoraBottomAppMenuItem
+            android:id="@+id/add_to_home_screen"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_add_to_home_screen"
+            android:text="@string/bottom_app_menu_add_to_home_screen" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.example.trubrowsermenusample.IteoraBottomAppMenuItem
+            android:id="@+id/my_data"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_my_data"
+            android:text="@string/bottom_app_menu_my_data" />
+
+        <com.example.trubrowsermenusample.IteoraBottomAppMenuItem
+            android:id="@+id/translate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_translate"
+            android:text="@string/bottom_app_menu_translate" />
+
+        <com.example.trubrowsermenusample.IteoraBottomAppMenuItem
+            android:id="@+id/logout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_logout"
+            android:text="@string/bottom_app_menu_logout" />
+
+        <com.example.trubrowsermenusample.IteoraBottomAppMenuItem
+            android:id="@+id/more"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_more"
+            android:text="@string/bottom_app_menu_more" />
+
+        <com.example.trubrowsermenusample.IteoraBottomAppMenuItem
+            android:id="@+id/recent_tabs"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_recent_tabs"
+            android:text="@string/bottom_app_menu_recent_tabs"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="24dp"
+        android:visibility="gone">
+
+        <com.example.trubrowsermenusample.IteoraBottomAppMenuItem
+            android:id="@+id/history"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_history"
+            android:text="@string/bottom_app_menu_history" />
+
+        <com.example.trubrowsermenusample.IteoraDesktopSiteBottomAppMenuItem
+            android:id="@+id/desktop_site"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_desktop_site"
+            android:text="@string/bottom_app_menu_desktop_site" />
+
+        <com.example.trubrowsermenusample.IteoraBottomAppMenuItem
+            android:id="@+id/settings"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_settings"
+            android:text="@string/bottom_app_menu_settings" />
+
+        <com.example.trubrowsermenusample.IteoraBottomAppMenuItem
+            android:id="@+id/close_app"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_close_app"
+            android:text="@string/bottom_app_menu_close_app" />
+
+    </LinearLayout>
+
+
+</com.example.trubrowsermenusample.IteoraBottomAppMenuItems>

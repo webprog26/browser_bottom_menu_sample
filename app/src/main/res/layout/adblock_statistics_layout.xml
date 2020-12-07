@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.trubrowsermenusample.IteoraAdblockStatisticsLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/adblock_statistics_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginEnd="16dp"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/ads_blocked"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:lines="1"
+            android:text="@string/adblock_counter_ads_removed"
+            style="@style/BottomAppMenuTextStyle" />
+
+        <TextView
+            android:id="@+id/tracking_blocked"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:lines="1"
+            android:text="@string/adblock_counter_tracking_blocked"
+            style="@style/BottomAppMenuTextStyle" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/traffic_saved_data_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/traffic_saved"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:lines="1"
+            android:text="@string/adblock_counter_traffic_saved"
+            style="@style/BottomAppMenuTextStyle" />
+
+        <TextView
+            android:id="@+id/tracking_saved_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:lines="1"
+            android:text="@string/adblock_counter_traffic_saved_date"
+            style="@style/BottomAppMenuTextStyle" />
+
+    </LinearLayout>
+
+</com.example.trubrowsermenusample.IteoraAdblockStatisticsLayout>
