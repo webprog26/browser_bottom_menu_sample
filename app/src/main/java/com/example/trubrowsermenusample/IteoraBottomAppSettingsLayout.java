@@ -5,17 +5,20 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
-public class IteoraBottomAppSettingsLayout extends LinearLayout implements IteoraBottomAppMenuItems.OnIteoraBottomAppMenuItemClickListener,
+public class IteoraBottomAppSettingsLayout extends LinearLayout implements IteoraBottomAppMenuBasicNtpItems.OnIteoraBottomAppMenuItemClickListener,
         IteoraBottomAppMenuHeaderLayout.OnAppMenuCloseClickedListener, IteoraBottomAppMenuAdblockControlsLayout.OnAdblockControlsChangedListener {
 
     private IteoraAdblockStatisticsLayout adblockStatisticsLayout;
-    private IteoraBottomAppMenuItems iteoraBottomAppMenuItems;
+    private IteoraBottomAppMenuBasicNtpItems iteoraBottomAppMenuItems;
+
+    private ViewGroup itemsView;
 
     public IteoraBottomAppSettingsLayout(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
@@ -34,8 +37,7 @@ public class IteoraBottomAppSettingsLayout extends LinearLayout implements Iteor
         findViewById(R.id.app_settings_view_shadow).setOnClickListener(v -> hideBottomAppSettings());
 
         final View bottomAppSettingsContent = findViewById(R.id.bottom_app_settings_content);
-        iteoraBottomAppMenuItems = bottomAppSettingsContent.findViewById(R.id.bottom_app_menu_items);
-        iteoraBottomAppMenuItems.setItemClickListener(this);
+        itemsView = bottomAppSettingsContent.findViewById(R.id.bottom_app_menu_items);
 
         final IteoraBottomAppMenuHeaderLayout menuHeaderLayout = findViewById(R.id.app_menu_header_layout);
         menuHeaderLayout.setMenuCloseClickedListener(this);
@@ -59,6 +61,12 @@ public class IteoraBottomAppSettingsLayout extends LinearLayout implements Iteor
     }
 
     private void updateSettings() {
+        final boolean isNtp = true;
+        iteoraBottomAppMenuItems = isNtp ? new IteoraBottomAppMenuBasicNtpItems(getContext()) : new IteoraBottomAppMenuItems(getContext());
+        iteoraBottomAppMenuItems.setItemClickListener(this);
+
+        itemsView.addView(iteoraBottomAppMenuItems);
+
         initDesktopSiteItem(true);
         adblockStatisticsLayout.setAdsBlocked(999);
         adblockStatisticsLayout.setTrackingBlocked(999);
@@ -69,11 +77,15 @@ public class IteoraBottomAppSettingsLayout extends LinearLayout implements Iteor
 
         adblockStatisticsLayout.setTrafficSavedDate(calendar.get(Calendar.DAY_OF_MONTH),
                 new SimpleDateFormat("MMM", Locale.getDefault()).format(calendar.getTime()));
+
     }
 
     private void hideBottomAppSettings() {
         log("hideBottomAppSettings()");
-        iteoraBottomAppMenuItems.onMenuClosed();
+        itemsView.removeAllViews();
+        if (iteoraBottomAppMenuItems instanceof IteoraBottomAppMenuItems) {
+            ((IteoraBottomAppMenuItems) iteoraBottomAppMenuItems).onMenuClosed();
+        }
         setVisibility(View.GONE);
     }
 
@@ -134,12 +146,6 @@ public class IteoraBottomAppSettingsLayout extends LinearLayout implements Iteor
     @Override
     public void onLogOutClicked() {
         log("onLogOutClicked()");
-    }
-
-    @Override
-    public void onMoreClicked() {
-        log("onMoreClicked()");
-        iteoraBottomAppMenuItems.onMoreClicked();
     }
 
     @Override

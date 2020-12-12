@@ -15,7 +15,10 @@
         android:layout_marginBottom="28dp"
         android:background="@color/bottom_app_menu_divider_color" />
 
-    <include layout="@layout/bottom_app_menu_items" />
+    <FrameLayout
+        android:id="@+id/bottom_app_menu_items"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
     <View
         android:layout_width="match_parent"
